@@ -1,0 +1,47 @@
+version: 0.2
+workspace:
+  type: "kubernetes"
+  specs:
+    kubernetes:
+      image:
+        value: index.docker.io/codererik/data-science-coder:latest
+      container-based-vm:
+        value: false
+      cpu:
+        value: 4
+      memory:
+        value: 8 
+      disk:
+        value: 10
+      # gpu-count:
+        # value: 1
+      labels:
+        value: 
+          com.coder.custom.python.version: "3.8.5"
+          com.coder.custom.pycharm.version: "2021.1.1"    
+          com.coder.custom.chargeback: "datascience_groupb25"
+  configure:
+    start:
+      value:
+        - name: install python packages
+          directory: /home/coder/
+          shell: /bin/bash
+          command: |
+            sudo pip3 install pandas
+            sudo pip3 install scikit-learn
+            sudo pip3 install sklearn
+            sudo pip3 install matplotlib
+            sudo pip3 install flask
+            sudo pip3 install django
+            sudo pip3 install pyyaml
+            sudo pip3 install scipy
+            sudo pip3 install keras
+            sudo pip3 install pytorch
+            sudo pip3 install tensorflow
+            sudo pip3 install beautifulsoup4          
+        - name: setup data-science-imdb-sample repo
+          directory: /home/coder/
+          shell: /bin/bash
+          command: |
+            ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+            git clone git@github.com:IAmHughes/data-science-imdb-sample.git
