@@ -90,3 +90,6 @@ RUN systemctl enable docker
 
 # go to coder home directory
 WORKDIR /home/coder
+
+# Set back to coder user
+USER coder
