@@ -4,7 +4,7 @@ workspace:
   specs:
     kubernetes:
       image:
-        value: index.docker.io/codererik/data-science-coder:latest
+        value: index.docker.io/codererik/coder-ds-samp:latest
       container-based-vm:
         value: false
       cpu:
@@ -17,8 +17,6 @@ workspace:
         # value: 1
       labels:
         value: 
-          com.coder.custom.python.version: "3.8.5"
-          com.coder.custom.pycharm.version: "2021.1.1"    
           com.coder.custom.chargeback: "datascience_groupb25"
   configure:
     start:
