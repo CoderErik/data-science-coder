@@ -34,7 +34,7 @@ workspace:
             sudo pip3 install pyyaml
             sudo pip3 install scipy
             sudo pip3 install keras
-            sudo pip3 install pytorch
+            sudo pip3 install torch
             sudo pip3 install tensorflow
             sudo pip3 install beautifulsoup4          
         - name: setup data-science-imdb-sample repo

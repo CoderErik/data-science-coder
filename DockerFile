@@ -38,7 +38,20 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y \
     libfontconfig1 \
     libxi6 \
     libgtk-3-0
-    
+
+# Install python packages
+ RUN pip3 install pandas \
+    scikit-learn \
+    sklearn \
+    matplotlib \
+    flask \
+    django \
+    pyyaml \
+    scipy \
+    keras \
+    tensorflow \
+    beautifulsoup4 
+  
 # Install poetry
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
 
